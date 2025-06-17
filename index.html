@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Class 12 Computer Science</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 70px;
+      background: #f9f9f9;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #ff7e5f, #6816ec);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      display: block;
+      padding: 20px 0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #333;
+      border-bottom: 3px solid #333;
+    }
+
+    section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    #chapter1{
+      padding-top:80px;
+      margin-top:80px;
+    }
+    section h1 {
+      margin-top: 0;
+    }
+    img{
+      max-width:80%;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#chapter1">Chapter 1</a></li>
+      <li><a href="#chapter2">Chapter 2</a></li>
+      <li><a href="#chapter3">Chapter 3</a></li>
+      <li><a href="#chapter4">Chapter 4</a></li>
+    </ul>
+  </nav>
+
+<section id="chapter1">
+  <h1>Chapter 1: Database Concepts</h1>
+  </blockquote>
+  <div class="content ck-content">
+    <p><strong>Data:</strong> Raw, unorganized facts and figures without context. Example: 98, Kathmandu, Blue. On their own, they don't convey any meaning until they are processed.</p>
+    <p><strong>Information:</strong> Organized or processed data that provides meaning or value and is useful for decision-making. Example: "The temperature today in Kathmandu is 25°C."</p>
+    <h4><strong>Features of Information</strong></h4>
+    <ol>
+      <li><strong>Accurate:</strong> Free from error, consistent with facts.</li>
+      <li><strong>Timely:</strong> Available when needed, not outdated.</li>
+      <li><strong>Relevant:</strong> Applicable to the purpose at hand.</li>
+      <li><strong>Complete:</strong> Includes all necessary data for a decision.</li>
+      <li><strong>Well-formatted:</strong> Organized and easy to interpret.</li>
+    </ol>
+    <p><strong>Database:</strong> A systematically organized collection of structured data that allows for easy access, management, and updating.</p>
+    <p><strong>Purpose of Database:</strong> To store, retrieve, manipulate, and manage data in a structured and secure way that supports decision-making and data integrity.</p>
+    <h4><strong>Database Terminologies</strong></h4>
+    <ul>
+      <li><strong>Table:</strong> Collection of data organized in rows and columns. Each table stores data for a specific entity.</li>
+      <li><strong>Field:</strong> Column in a table. Represents one attribute of the data, such as 'Name' or 'Age'.</li>
+      <li><strong>Record / Tuple:</strong> Row in a table. Represents a single item or instance of data, e.g., one person’s full information.</li>
+      <li><strong>Object:</strong> In object-oriented databases, it’s a combination of related data and methods that operate on that data.</li>
+      <li><strong>Keys:</strong> Special fields used to identify records uniquely (Primary, Foreign, Candidate Keys).</li>
+    </ul>
+    <p><strong>Data Dictionary:</strong> A set of information describing the contents, format, and structure of a database and the relationship between its elements. Acts like metadata about the database.</p>
+    <h4><strong>Database Management System (DBMS)</strong></h4>
+    <p><strong>Introduction:</strong> A DBMS is software that enables users to define, manipulate, retrieve, and manage data in databases efficiently.</p>
+    <p><strong>Objectives:</strong> To ensure data integrity, data security, concurrent access, and reduce redundancy.</p>
+    <p><strong>Advantages:</strong> Provides backup and recovery, minimizes data redundancy, improves data sharing and security, and maintains data integrity.</p>
+    <p><strong>Disadvantages:</strong> Can be expensive to implement and maintain, requires trained personnel, and may be complex to manage.</p>
+    <h4><strong>Types of Database Models</strong></h4>
+    <ul>
+      <li><strong>Hierarchical:</strong> Uses a tree-like structure with parent-child relationships. Fast but rigid. Example: XML documents.</li>
+      <li><strong>Network:</strong> Allows multiple parent-child relationships. More flexible than hierarchical. Example: IDMS.</li>
+      <li><strong>Relational:</strong> Data is stored in related tables using keys. Most widely used. Example: MySQL, PostgreSQL.</li>
+      <li><strong>Entity-Relational (ER):</strong> A diagrammatic model that visually represents data and their relationships before implementation.</li>
+    </ul>
+    <h4><strong>Integrity Constraints</strong></h4>
+    <ul>
+      <li><strong>Domain:</strong> Ensures data entered is valid and within an acceptable range/type (e.g., age must be a number between 1–120).</li>
+      <li><strong>Entity:</strong> Ensures each record is uniquely identified (e.g., every student must have a unique student ID).</li>
+      <li><strong>Referential:</strong> Maintains valid relationships between tables (e.g., foreign key in orders table must exist in customers table).</li>
+      <li><strong>Keys:</strong> Mechanisms to enforce constraints and provide relationships (Primary Key, Foreign Key, Composite Key, etc.).</li>
+    </ul>
+    <h4><strong>Normalization</strong></h4>
+    <p><strong>Introduction:</strong> A database design technique that reduces data redundancy and improves data integrity by organizing tables efficiently.</p>
+    <p><strong>Normal Forms:</strong></p>
+    <ul>
+      <li><strong>1NF:</strong> Removes repeating groups and ensures each field contains only atomic values.</li>
+      <li><strong>2NF:</strong> Builds on 1NF and removes partial dependencies; applies only if a table has a composite primary key.</li>
+      <li><strong>3NF:</strong> Builds on 2NF and removes transitive dependencies where non-key attributes depend on other non-key attributes.</li>
+    </ul>
+    <p><strong>Advantages:</strong> Better data consistency, avoids anomalies during update/insert/delete, efficient data structure.</p>
+    <p><strong>Disadvantages:</strong> Complex queries with multiple joins, sometimes impacts performance in read-heavy systems.</p>
+    <h4><strong>Centralized vs. Distributed Database</strong></h4>
+    <p><strong>Introduction:</strong> Centralized databases keep all data in one location; distributed databases store data across multiple physical sites.</p>
+    <p><strong>Advantages of Centralized:</strong> Simple to manage, better data consistency, unified security control.</p>
+    <p><strong>Disadvantages of Centralized:</strong> High risk of data loss from failure, difficult to scale, bottlenecks.</p>
+    <p><strong>Advantages of Distributed:</strong> Improved reliability and availability, better performance across regions, scalability.</p>
+    <p><strong>Disadvantages of Distributed:</strong> Difficult to maintain, higher complexity, synchronization and consistency challenges.</p>
+    <h4><strong>Database Security</strong></h4>
+    <p><strong>Introduction:</strong> Database security is about protecting sensitive data stored in a database from unauthorized access, breaches, or misuse.</p>
+    <p><strong>Challenges:</strong> Threats from hackers, accidental data leaks, SQL injection attacks, insider threats, natural disasters.</p>
+    <p><strong>Security Measures:</strong> User authentication, role-based access control, data encryption, regular backups, firewalls, and audit trails.</p>
+    <p><strong>Role of DBA (Database Administrator):</strong> Ensures smooth operation of databases including design, performance tuning, setting up user roles, backup and disaster recovery, and enforcing security.</p>
+    <h4><strong>Practical Topics</strong></h4>
+    <p><strong>DDL and DML:</strong></p>
+    <ul>
+      <li><strong>DDL (Data Definition Language):</strong> Used to define or change structure of databases or tables (e.g., CREATE, ALTER, DROP).</li>
+      <li><strong>DML (Data Manipulation Language):</strong> Used to add, delete, or modify data in existing tables (e.g., INSERT, UPDATE, DELETE).</li>
+    </ul>
+    <h4><strong>SQL Data Types (with Detailed Use-Cases):</strong></h4>
+    <ul>
+      <li><strong>CHAR:</strong> Stores fixed-length strings (e.g., country codes like 'US', 'NP'). Always uses full space regardless of content.</li>
+      <li><strong>VARCHAR:</strong> Stores variable-length strings (e.g., names, emails). Saves space by using only needed characters.</li>
+      <li><strong>BINARY:</strong> Fixed-length binary data (e.g., fixed-size encryption key or flag in binary).</li>
+      <li><strong>VARBINARY:</strong> Variable-length binary data (e.g., storing images, audio files, or PDFs).</li>
+      <li><strong>TINYBLOB:</strong> Very small binary large object (up to 255 bytes) suitable for small media files like favicons.</li>
+      <li><strong>TINYTEXT:</strong> Very small text string (up to 255 characters), good for short user bios or brief notes.</li>
+      <li><strong>TEXT:</strong> Large text data (up to 65,535 characters), ideal for articles, product descriptions, reviews.</li>
+      <li><strong>LONGTEXT:</strong> Extra-large text (up to 4GB), used for storing logs, legal documents, eBooks.</li>
+      <li><strong>ENUM:</strong> List of predefined values (e.g., ENUM('small', 'medium', 'large') for clothing size).</li>
+      <li><strong>BIT:</strong> Stores bit values (0 or 1). Good for binary flags like on/off, true/false.</li>
+      <li><strong>TINYINT:</strong> Small integer (-128 to 127). Common for short ranges like age or ratings.</li>
+      <li><strong>BOOLEAN:</strong> Alias of TINYINT (0 = FALSE, 1 = TRUE). Used for logical conditions.</li>
+      <li><strong>INTEGER (INT):</strong> Whole numbers (e.g., 100, -25). Used for IDs, quantity, counters.</li>
+      <li><strong>FLOAT:</strong> Approximate floating-point numbers. Ideal for measurements like height or weight.</li>
+      <li><strong>DOUBLE:</strong> More precise floating-point number than FLOAT. Ideal for scientific or statistical calculations.</li>
+      <li><strong>DECIMAL:</strong> Fixed-point precision number. Perfect for financial data like prices, salaries.</li>
+      <li><strong>DATE:</strong> Stores only date (e.g., '2025-06-16'). Used for birthdays, registration dates.</li>
+      <li><strong>DATETIME:</strong> Stores both date and time (e.g., '2025-06-16 14:30:00'). Perfect for event logs or timestamps.</li>
+    </ul>
+  </div>
+</section>
+</body>
+</html>
