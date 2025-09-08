@@ -224,6 +224,142 @@
       <li><strong>DATETIME:</strong> Stores both date and time (e.g., '2025-06-16 14:30:00'). Perfect for event logs or timestamps.</li>
     </ul>
   </div>
+ <h1>Database Concepts & SQL Basics</h1>
+
+    <h2>1. DBA and Roles of DBA</h2>
+    <p><strong>DBA (Database Administrator):</strong> The person responsible for managing and maintaining the database system.</p>
+    <h3>Roles of DBA:</h3>
+    <ul>
+        <li>Database design and implementation</li>
+        <li>Security administration</li>
+        <li>Backup and recovery</li>
+        <li>Performance tuning</li>
+        <li>User management and permissions</li>
+        <li>Data integrity and consistency</li>
+        <li>Monitoring and troubleshooting</li>
+    </ul>
+
+    <h2>2. ER Diagrams (Entity-Relationship Diagrams)</h2>
+    <p>Visual representation of the database structure.</p>
+    <h3>Components:</h3>
+    <ul>
+        <li><strong>Entity:</strong> A real-world object or concept (e.g., Student, Employee).</li>
+        <li><strong>Attributes:</strong> Properties or details of an entity (e.g., Student Name, Employee ID).</li>
+        <li><strong>Relationships:</strong> Associations between entities (e.g., Student <em>enrolls in</em> Course).</li>
+        <li><strong>Cardinality:</strong> Specifies the number of instances of one entity related to another (1:1, 1:N, M:N).</li>
+        <li><strong>Degree:</strong> Number of entities involved in a relationship (unary, binary, ternary).</li>
+    </ul>
+
+    <h3>Symbols and Meanings:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Rectangle</td><td>Entity</td></tr>
+            <tr><td>Oval / Ellipse</td><td>Attribute</td></tr>
+            <tr><td>Diamond</td><td>Relationship</td></tr>
+            <tr><td>Double oval</td><td>Multi-valued attribute</td></tr>
+            <tr><td>Dashed oval</td><td>Derived attribute</td></tr>
+            <tr><td>Double rectangle</td><td>Weak entity</td></tr>
+            <tr><td>Line connecting</td><td>Relationship or attribute link</td></tr>
+            <tr><td>Crow’s foot notation</td><td>Cardinality (one, many)</td></tr>
+        </tbody>
+    </table>
+
+    <h2>3. SQL (Structured Query Language)</h2>
+    <p>Language used to communicate with a database.</p>
+    <h3>SQL Categories:</h3>
+    <ul>
+        <li><strong>DDL (Data Definition Language):</strong> Commands to define or modify database structure
+            <ul>
+                <li><code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code></li>
+            </ul>
+        </li>
+        <li><strong>DML (Data Manipulation Language):</strong> Commands to manipulate data
+            <ul>
+                <li><code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>4. Data Constraints</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Constraint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>NOT NULL</code></td><td>Column must have a value; cannot be NULL</td></tr>
+            <tr><td><code>UNIQUE</code></td><td>Values in the column must be unique</td></tr>
+            <tr><td><code>PRIMARY KEY</code></td><td>Uniquely identifies each record; NOT NULL + UNIQUE</td></tr>
+            <tr><td><code>AUTO INCREMENT</code></td><td>Automatically generates a unique number (often for primary key)</td></tr>
+        </tbody>
+    </table>
+
+    <h2>5. SQL Operators</h2>
+    <p>Used in <code>WHERE</code> clause to filter records:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>AND</code></td><td>Both conditions true</td></tr>
+            <tr><td><code>OR</code></td><td>Either condition true</td></tr>
+            <tr><td><code>NOT</code></td><td>Negates a condition</td></tr>
+        </tbody>
+    </table>
+
+    <h2>6. WHERE Clause</h2>
+    <p>Used to filter records based on a condition.</p>
+    <pre><code>SELECT * FROM Students WHERE Age &gt; 18;</code></pre>
+
+    <h2>7. ORDER BY Clause</h2>
+    <p>Used to sort the result-set by one or more columns.</p>
+    <pre><code>SELECT * FROM Students ORDER BY Name ASC;</code></pre>
+
+    <h2>8. SQL JOINs</h2>
+    <p>Combine rows from two or more tables based on a related column.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>JOIN Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>INNER JOIN</strong></td>
+                <td>Returns records with matching values in both tables</td>
+                <td><code>SELECT * FROM A INNER JOIN B ON A.id = B.a_id;</code></td>
+            </tr>
+            <tr>
+                <td><strong>LEFT JOIN</strong></td>
+                <td>Returns all records from left table and matched from right</td>
+                <td><code>SELECT * FROM A LEFT JOIN B ON A.id = B.a_id;</code></td>
+            </tr>
+            <tr>
+                <td><strong>RIGHT JOIN</strong></td>
+                <td>Returns all records from right table and matched from left</td>
+                <td><code>SELECT * FROM A RIGHT JOIN B ON A.id = B.a_id;</code></td>
+            </tr>
+            <tr>
+                <td><strong>FULL JOIN</strong></td>
+                <td>Returns all records when there is a match or not</td>
+                <td><code>SELECT * FROM A FULL OUTER JOIN B ON A.id = B.a_id;</code></td>
+            </tr>
+        </tbody>
+    </table>
+
 </section>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
@@ -550,6 +686,294 @@ WHERE Id = 3;
 </head>
    <section id="chapter2">
     <h1>Chapter 2: C- Programming Questions &amp; Answers</h1>
+<h2>Functions</h2>
+
+<h3>Introduction and Syntax</h3>
+<p>A function is a block of code designed to perform a particular task. It improves modularity and reusability.</p>
+<pre><code>return_type function_name(parameter_list) {
+  // body of function
+}</code></pre>
+
+<h3>Purpose and Advantages</h3>
+<ul>
+  <li>Code Reusability</li>
+  <li>Modularity</li>
+  <li>Easier Debugging and Maintenance</li>
+  <li>Improves readability</li>
+</ul>
+
+<h3>Components of a Function</h3>
+<ul>
+  <li>Function Prototype (Declaration)</li>
+  <li>Function Definition (Implementation)</li>
+  <li>Function Call</li>
+  <li>Return Statement</li>
+</ul>
+
+<h3>Prototype</h3>
+<p>Declares the function signature to the compiler.</p>
+<pre><code>int add(int, int);</code></pre>
+
+<h3>Function Definition</h3>
+<p>The actual code block performing the task.</p>
+<pre><code>int add(int a, int b) {
+  return a + b;
+}</code></pre>
+
+<h3>Function Call</h3>
+<p>Invokes the function and passes control.</p>
+<pre><code>int sum = add(5, 3);</code></pre>
+
+<h3>Return Statement</h3>
+<p>Ends the function execution and optionally returns a value.</p>
+
+<h3>Types of Functions</h3>
+<ul>
+  <li><b>Library Functions:</b> Predefined in C standard library (e.g., printf, scanf)</li>
+  <li><b>User Defined Functions:</b> Defined by the programmer</li>
+</ul>
+
+<h3>Passing Arguments</h3>
+<ul>
+  <li><b>Call By Value:</b> Copies actual values; changes inside function do not affect originals</li>
+  <li><b>Call By Reference:</b> Passes address; changes inside function affect original variables</li>
+</ul>
+
+<h3>Variable and Its Scope</h3>
+<ul>
+  <li><b>Local:</b> Declared inside a function, accessible only within it</li>
+  <li><b>Global:</b> Declared outside functions, accessible throughout the program</li>
+</ul>
+
+<h3>Storage Classes</h3>
+<table>
+  <tr><th>Storage Class</th><th>Description</th></tr>
+  <tr><td>automatic (auto)</td><td>Default for local variables; lifetime limited to function/block</td></tr>
+  <tr><td>external (extern)</td><td>Refers to global variables; accessible across multiple files</td></tr>
+  <tr><td>static</td><td>Preserves value between function calls; limits scope to the file/block</td></tr>
+  <tr><td>register</td><td>Suggests storing variable in CPU register for faster access</td></tr>
+</table>
+
+<h3>Function with Array (Example)</h3>
+<pre><code>void printArray(int arr[], int size) {
+  for(int i=0; i&lt;size; i++) {
+    printf("%d ", arr[i]);
+  }
+}
+</code></pre>
+
+<h3>Recursive Function</h3>
+<p>A function that calls itself either directly or indirectly.</p>
+<pre><code>int factorial(int n) {
+  if (n == 0)
+    return 1;
+  else
+    return n * factorial(n - 1);
+}
+</code></pre>
+<h4>Advantages:</h4>
+<ul>
+  <li>Simplifies code for problems like factorial, Fibonacci, tree traversals</li>
+</ul>
+<h4>Disadvantages:</h4>
+<ul>
+  <li>Higher memory usage due to stack calls</li>
+  <li>Possible stack overflow if recursion is too deep</li>
+</ul>
+
+<hr>
+
+<h2>Structure and Union</h2>
+
+<h3>Structure</h3>
+<h4>Introduction and Syntax</h4>
+<p>Used to group different types of variables under a single name.</p>
+<pre><code>struct Student {
+  int id;
+  char name[50];
+  float marks;
+};</code></pre>
+
+<h4>Structure Size</h4>
+<p>Sum of sizes of all members plus padding for alignment.</p>
+
+<h4>Accessing Members</h4>
+<pre><code>struct Student s1;
+s1.id = 101;
+strcpy(s1.name, "John");
+s1.marks = 89.5;</code></pre>
+
+<h4>Nested Structure (Example)</h4>
+<pre><code>struct Date {
+  int day, month, year;
+};
+
+struct Student {
+  int id;
+  struct Date dob; // nested structure
+};</code></pre>
+
+<h4>Array of Structure (Example)</h4>
+<pre><code>struct Student students[3];</code></pre>
+
+<h4>Passing Structure to Function (Example)</h4>
+<pre><code>void printStudent(struct Student s) {
+  printf("%d %s %f\n", s.id, s.name, s.marks);
+}</code></pre>
+
+<h3>Union</h3>
+<h4>Introduction and Syntax</h4>
+<p>Similar to structure but stores all members in the same memory location.</p>
+<pre><code>union Data {
+  int i;
+  float f;
+  char str[20];
+};</code></pre>
+
+<h4>Comparison between Structure and Union</h4>
+<table>
+  <tr><th>Feature</th><th>Structure</th><th>Union</th></tr>
+  <tr><td>Memory</td><td>Size is sum of members</td><td>Size is size of largest member</td></tr>
+  <tr><td>Access</td><td>Members have independent memory</td><td>All members share same memory</td></tr>
+  <tr><td>Use</td><td>When all members used simultaneously</td><td>When only one member used at a time</td></tr>
+</table>
+
+<hr>
+
+<h2>Pointers</h2>
+
+<h3>Introduction and Syntax</h3>
+<p>A pointer stores the address of a variable.</p>
+<pre><code>int *ptr;
+int x = 10;
+ptr = &x;</code></pre>
+
+<h3>Usage and Working</h3>
+<ul>
+  <li>Access and modify variables indirectly.</li>
+  <li>Used for dynamic memory, arrays, strings, functions.</li>
+</ul>
+
+<h3>Concept of Value and Address</h3>
+<ul>
+  <li>Value: The data stored in a variable</li>
+  <li>Address: Memory location of the variable</li>
+</ul>
+
+<h3>Declaration and Initialization</h3>
+<pre><code>int *p = NULL;  // Pointer initialized to null
+int a = 5;
+p = &a;</code></pre>
+
+<h3>Pointer and Function (Example)</h3>
+<pre><code>void swap(int *x, int *y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}</code></pre>
+
+<h3>Call by Reference (Example)</h3>
+<pre><code>int main() {
+  int a = 5, b = 10;
+  swap(&a, &b);
+  printf("%d %d", a, b); // Output: 10 5
+  return 0;
+}</code></pre>
+
+<h3>Comparison between Call by Value and Call by Reference</h3>
+<table>
+  <tr><th>Aspect</th><th>Call by Value</th><th>Call by Reference</th></tr>
+  <tr><td>Parameter Passing</td><td>Copies value</td><td>Passes address</td></tr>
+  <tr><td>Effect on Original</td><td>No change</td><td>Original variable changes</td></tr>
+  <tr><td>Memory</td><td>Uses more stack space</td><td>Efficient for large data</td></tr>
+</table>
+
+<h3>Pointer with Arrays (Example)</h3>
+<pre><code>int arr[] = {1, 2, 3};
+int *p = arr;
+printf("%d", *(p + 1)); // Outputs 2</code></pre>
+
+<h3>Advantages and Disadvantages of Pointers</h3>
+<ul>
+  <li><b>Advantages:</b> Efficient memory management, dynamic memory allocation, allows complex data structures.</li>
+  <li><b>Disadvantages:</b> Can cause bugs if misused (dangling pointers, memory leaks), complex for beginners.</li>
+</ul>
+
+<hr>
+
+<h2>File Handling</h2>
+
+<h3>Concept of Data File</h3>
+<p>Files store data permanently on disk outside program memory.</p>
+
+<h3>Need for File Handling in C</h3>
+<p>To save data beyond program execution and to manage large amounts of data.</p>
+
+<h3>Sequential and Random Files</h3>
+<ul>
+  <li><b>Sequential Files:</b> Read/write data in sequence.</li>
+  <li><b>Random Files:</b> Access data randomly using file pointers.</li>
+</ul>
+
+<h3>File Handling Functions</h3>
+<table>
+  <tr><th>Function</th><th>Purpose</th><th>Syntax</th></tr>
+  <tr><td>fopen()</td><td>Open a file</td><td><code>FILE *fopen(const char *filename, const char *mode);</code></td></tr>
+  <tr><td>fclose()</td><td>Close a file</td><td><code>int fclose(FILE *stream);</code></td></tr>
+  <tr><td>getc()</td><td>Read a character</td><td><code>int getc(FILE *stream);</code></td></tr>
+  <tr><td>putc()</td><td>Write a character</td><td><code>int putc(int char, FILE *stream);</code></td></tr>
+  <tr><td>fprintf()</td><td>Write formatted data</td><td><code>int fprintf(FILE *stream, const char *format, ...);</code></td></tr>
+  <tr><td>fscanf()</td><td>Read formatted data</td><td><code>int fscanf(FILE *stream, const char *format, ...);</code></td></tr>
+  <tr><td>getw()</td><td>Read an integer</td><td><code>int getw(FILE *stream);</code></td></tr>
+  <tr><td>putw()</td><td>Write an integer</td><td><code>int putw(int w, FILE *stream);</code></td></tr>
+  <tr><td>fgets()</td><td>Read string</td><td><code>char *fgets(char *str, int n, FILE *stream);</code></td></tr>
+  <tr><td>fputs()</td><td>Write string</td><td><code>int fputs(const char *str, FILE *stream);</code></td></tr>
+  <tr><td>fread()</td><td>Read block of data</td><td><code>size_t fread(void *ptr, size_t size, size_t count, FILE *stream);</code></td></tr>
+  <tr><td>fwrite()</td><td>Write block of data</td><td><code>size_t fwrite(const void *ptr, size_t size, size_t count, FILE *stream);</code></td></tr>
+  <tr><td>remove()</td><td>Delete a file</td><td><code>int remove(const char *filename);</code></td></tr>
+  <tr><td>rename()</td><td>Rename a file</td><td><code>int rename(const char *oldname, const char *newname);</code></td></tr>
+</table>
+
+<h3>Random Access Functions</h3>
+<table>
+  <tr><th>Function</th><th>Purpose</th><th>Syntax</th></tr>
+  <tr><td>fseek()</td><td>Move file pointer to a specific location</td><td><code>int fseek(FILE *stream, long offset, int origin);</code></td></tr>
+  <tr><td>rewind()</td><td>Set file pointer to beginning</td><td><code>void rewind(FILE *stream);</code></td></tr>
+  <tr><td>ftell()</td><td>Get current position of file pointer</td><td><code>long ftell(FILE *stream);</code></td></tr>
+</table>
+
+<h3>File Opening Modes</h3>
+<ul>
+  <li><code>r</code>: Read (file must exist)</li>
+  <li><code>r+</code>: Read/Write (file must exist)</li>
+  <li><code>w</code>: Write (creates new file or truncates existing)</li>
+  <li><code>w+</code>: Read/Write (creates new or truncates)</li>
+  <li><code>a</code>: Append (creates file if not exists)</li>
+  <li><code>a+</code>: Read/Append (creates file if not exists)</li>
+</ul>
+
+<h3>Steps to Work with File in C</h3>
+<ol>
+  <li>Define a file pointer: <code>FILE *fp;</code></li>
+  <li>Open file with required mode: <code>fp = fopen("filename", "mode");</code></li>
+  <li>Perform read/write/append operations</li>
+  <li>Close file: <code>fclose(fp);</code></li>
+</ol>
+
+<h3>Reading, Writing and Appending Data</h3>
+<ul>
+  <li>Use <code>fscanf()</code>, <code>fgets()</code>, <code>fread()</code> for reading</li>
+  <li>Use <code>fprintf()</code>, <code>fputs()</code>, <code>fwrite()</code> for writing/appending</li>
+</ul>
+
+<h3>End of File (EOF)</h3>
+<p>EOF is a condition which indicates no more data to read from file.</p>
+
+<h3>Typedef Keyword</h3>
+<p><code>typedef</code> creates an alias name for data types to make code more readable.</p>
+<pre><code>typedef unsigned int uint;
+uint a = 10;</code></pre>
+
 
     <details>
       <summary>1. Working with a function</summary>
